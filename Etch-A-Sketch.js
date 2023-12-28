@@ -34,6 +34,6 @@ function assignColor(){
   clear()
   }
 function clear(){
-  boxes.style.backgroundColor= 'white'
+  div.rem
 
 }
