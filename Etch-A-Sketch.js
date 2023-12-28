@@ -3,7 +3,7 @@ let divs =[]
 let container = document.getElementById('container')
 let color =[]
 window.onload= gamePlay
-
+//need to get clear button to function//
 
 function build(){
 for (let i =0; i< totalBoxes; i++){
