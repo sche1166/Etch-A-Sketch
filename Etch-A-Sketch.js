@@ -1,24 +1,33 @@
-let totalBoxes=256
+let totalGridColumns=16
+let totalGridRows=16
 let divs =[]
+let boxes
 let container = document.getElementById('container')
 let color =[]
+
+let slider=document.querySelector('input')
+let sliderValue =document.querySelector('.value')
+sliderValue.textContent= slider.value
 window.onload= gamePlay
 //need to get clear button to function//
 
+
+slider.oninput = () => {
+  sliderValue.textContent=slider.value}
+
 function build(){
-for (let i =0; i< totalBoxes; i++){
- let boxes= document.createElement('div')
+for (let i =0; i< totalGridColumns; i++){
+  for(let j= 0; j<totalGridRows; j++){
+ boxes= document.createElement('div')
   container.appendChild(boxes) 
   boxes.classList.add('boxStyle')
   divs.push(boxes)
-}}
-//i have an array in which I push my boxes. OBJECTIVE- be able 
-//to click on each box and have a random RGB color assigned to it
+}}}
 
 function gamePlay(){
   build()
   assignColor()
-  clear()
+  
 }
 function assignColor(){
   divs.forEach(div => {
@@ -29,11 +38,10 @@ function assignColor(){
       div.style.backgroundColor = color[(Math.floor(Math.random()*color.length))]
     };
   });
-  
+  let clear = document.getElementById('clear')
+  clear.addEventListener('click', () =>{
+    div.style.backgroundColor= 'white'
   })
-  clear()
+  })
   }
-function clear(){
-  div.rem
-
-}
+  
