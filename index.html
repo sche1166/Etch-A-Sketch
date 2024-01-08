@@ -1,18 +1,60 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Etch-A-Sketch</title>
-    <link rel="stylesheet" href="styles.css">
-    </head>
-<body>
-   
-    
-    <div id="header"><h1>Etch-A-Sketch</h1>  <input type="button" value="clear" onclick="clearColors()"></div>     
-    <div id="container"> </div>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Single+Day&display=swap"
+      rel="stylesheet"
+    />
 
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div id="header">
+      <h1>Etch-A-Sketch</h1>
+      <p>Doodle around and have some fun</p>
+    </div>
+    <div id="gameArea">
+      <div id="gameSettings">
+        <div id="sliderBox">
+          <div class="box">
+            <div class="slider">
+              <input
+                class="sliderBar"
+                type="range"
+                value="16"
+                min="1"
+                max="75"
+              />
+            </div>
+            <div class="value">75</div>
+          </div>
+        </div>
+        <div class="gameMode">
+          <input type="button" value="Classic" onclick="classicGamePlay()" />
+          <input type="button" value="Modern" onclick="modernGamePlay()" />
+          <input type="button" value="Custom" onclick="customGamePlay()" />
+        </div>
+
+        <div class="RGB">
+          Red:<input type="range" id="red" value="255" min="0" max="255" />
+          Green:<input type="range" id="green" value="255" min="0" max="255" />
+          Blue:<input type="range" id="blue" value="255" min="0" max="255" />
+          <div id="colorBox"></div>
+        </div>
+
+        <input type="button" value="clear" id="clear" />
+      </div>
+
+      <div id="gameContainer">
+        <div id="container"></div>
+      </div>
+    </div>
 
     <script src="Etch-A-Sketch.js"></script>
-</body>
+  </body>
 </html>
